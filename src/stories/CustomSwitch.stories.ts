@@ -12,7 +12,7 @@ export default {
   decorators: [
     moduleMetadata({
       imports: [NzSwitchModule]
-    }
+    })
   ]
 } as Meta;
 

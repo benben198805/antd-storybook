@@ -117,7 +117,7 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<div class=\"component\">\n    <app-custom-button text=\"111111111\" color=\"blue\"></app-custom-button>\n</div>\n\n<div class=\"component\">\n    <nz-input-number [(ngModel)]=\"demoValue\" [nzMin]=\"1\" [nzMax]=\"100\" [nzStep]=\"1\" [nzFormatter]=\"formatterDollar\" [nzParser]=\"parserDollar\"></nz-input-number>\n    <nz-input-number [(ngModel)]=\"demoValue\" [nzMin]=\"1\" [nzMax]=\"100\" [nzStep]=\"1\" [nzFormatter]=\"formatterPercent\" [nzParser]=\"parserPercent\"></nz-input-number>\n</div>\n\n\n<div class=\"component\">\n    <app-custom-tag [text]=\"'test custom tag'\"></app-custom-tag>\n</div>\n\n<div class=\"component\">\n    <nz-date-picker [nzDateRender]=\"tplRender\"></nz-date-picker>\n    <ng-template #tplRender let-current>\n        <div class=\"ant-picker-cell-inner\" [class.border]=\"current.getDate() === 1\">\n            {{ current.getDate() }}\n        </div>\n    </ng-template>\n</div>"
+            "templateData": "<div class=\"component\">\n    <app-custom-button text=\"111111111\" color=\"blue\"></app-custom-button>\n</div>\n\n<div class=\"component\">\n    <nz-input-number [(ngModel)]=\"demoValue\" [nzMin]=\"1\" [nzMax]=\"100\" [nzStep]=\"1\" [nzFormatter]=\"formatterDollar\" [nzParser]=\"parserDollar\"></nz-input-number>\n    <nz-input-number [(ngModel)]=\"demoValue\" [nzMin]=\"1\" [nzMax]=\"100\" [nzStep]=\"1\" [nzFormatter]=\"formatterPercent\" [nzParser]=\"parserPercent\"></nz-input-number>\n</div>\n\n<div class=\"component\">\n    <app-custom-tag [text]=\"'test custom tag'\"></app-custom-tag>\n</div>\n\n<div class=\"component\">\n    <app-custom-switch [openText]=\"'yes'\" [closeText]=\"'no'\"></app-custom-switch>\n</div>\n\n<div class=\"component\">\n    <nz-date-picker [nzDateRender]=\"tplRender\"></nz-date-picker>\n    <ng-template #tplRender let-current>\n        <div class=\"ant-picker-cell-inner\" [class.border]=\"current.getDate() === 1\">\n            {{ current.getDate() }}\n        </div>\n    </ng-template>\n</div>"
         },
         {
             "name": "ButtonComponent",
@@ -317,6 +317,85 @@
                 "OnInit"
             ],
             "templateData": "<button [ngStyle]=\"{'color': color}\">\n  {{text}}\n</button>"
+        },
+        {
+            "name": "CustomSwitchComponent",
+            "id": "component-CustomSwitchComponent-9a210c1f58df1160914fcfb96d1c5957",
+            "file": "src/app/custom-switch/custom-switch.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-custom-switch",
+            "styleUrls": [
+                "./custom-switch.component.less"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./custom-switch.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "closeText",
+                    "defaultValue": "'关'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "string"
+                },
+                {
+                    "name": "openText",
+                    "defaultValue": "'开'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "string"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 18,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-custom-switch',\n  templateUrl: './custom-switch.component.html',\n  styleUrls: ['./custom-switch.component.less']\n})\nexport class CustomSwitchComponent implements OnInit {\n\n  @Input()\n  openText = '开'\n\n  @Input()\n  closeText = '关'\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./custom-switch.component.less"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 14
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div>\n    <p>custom-switch works!</p>\n    <nz-switch [ngModel]=\"true\" [nzCheckedChildren]=\"openText\" [nzUnCheckedChildren]=\"closeText\"></nz-switch>\n</div>"
         },
         {
             "name": "CustomTagComponent",
@@ -545,13 +624,13 @@
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-4fb8ceac68aab428cacd6ed005119691",
+            "id": "module-AppModule-778f9f8586f004d0a4c5056dc4f640f3",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { BrowserModule } from '@angular/platform-browser';\n\nimport { AppRoutingModule } from './app-routing.module';\nimport { AppComponent } from './app.component';\nimport { CustomTagComponent } from './custom-tag/custom-tag.component';\nimport { CustomButtonComponent } from './custom-button/custom-button.component';\nimport { NZ_I18N } from 'ng-zorro-antd/i18n';\nimport { en_US } from 'ng-zorro-antd/i18n';\nimport { registerLocaleData } from '@angular/common';\nimport en from '@angular/common/locales/en';\nimport { FormsModule } from '@angular/forms';\nimport { HttpClientModule } from '@angular/common/http';\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\nimport { NzInputNumberModule } from 'ng-zorro-antd/input-number';\nimport { NzDatePickerModule } from 'ng-zorro-antd/date-picker';\nimport { NzTagModule } from 'ng-zorro-antd/tag';\n\nregisterLocaleData(en);\n\n\n@NgModule({\n  declarations: [\n    AppComponent,\n    CustomTagComponent,\n    CustomButtonComponent\n  ],\n  imports: [\n    BrowserModule,\n    AppRoutingModule,\n    FormsModule,\n    HttpClientModule,\n    BrowserAnimationsModule,\n    NzInputNumberModule,\n    NzDatePickerModule,\n    NzTagModule,\n  ],\n  providers: [{ provide: NZ_I18N, useValue: en_US }],\n  bootstrap: [AppComponent]\n})\nexport class AppModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { BrowserModule } from '@angular/platform-browser';\n\nimport { AppRoutingModule } from './app-routing.module';\nimport { AppComponent } from './app.component';\nimport { CustomTagComponent } from './custom-tag/custom-tag.component';\nimport { CustomButtonComponent } from './custom-button/custom-button.component';\nimport { NZ_I18N } from 'ng-zorro-antd/i18n';\nimport { en_US } from 'ng-zorro-antd/i18n';\nimport { registerLocaleData } from '@angular/common';\nimport en from '@angular/common/locales/en';\nimport { FormsModule } from '@angular/forms';\nimport { HttpClientModule } from '@angular/common/http';\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\nimport { NzInputNumberModule } from 'ng-zorro-antd/input-number';\nimport { NzDatePickerModule } from 'ng-zorro-antd/date-picker';\nimport { NzTagModule } from 'ng-zorro-antd/tag';\nimport { CustomSwitchComponent } from './custom-switch/custom-switch.component';\nimport { NzSwitchModule } from 'ng-zorro-antd/switch';\n\nregisterLocaleData(en);\n\n\n@NgModule({\n  declarations: [\n    AppComponent,\n    CustomTagComponent,\n    CustomButtonComponent,\n    CustomSwitchComponent\n  ],\n  imports: [\n    BrowserModule,\n    AppRoutingModule,\n    FormsModule,\n    HttpClientModule,\n    BrowserAnimationsModule,\n    NzInputNumberModule,\n    NzDatePickerModule,\n    NzTagModule,\n    NzSwitchModule,\n  ],\n  providers: [{ provide: NZ_I18N, useValue: en_US }],\n  bootstrap: [AppComponent]\n})\nexport class AppModule { }\n",
             "children": [
                 {
                     "type": "providers",
@@ -565,6 +644,9 @@
                         },
                         {
                             "name": "CustomButtonComponent"
+                        },
+                        {
+                            "name": "CustomSwitchComponent"
                         },
                         {
                             "name": "CustomTagComponent"
@@ -660,6 +742,16 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/stories/CustomSwitch.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/stories/CustomTag.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -710,7 +802,7 @@
                 "name": "LoggedIn",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/Header.stories.ts",
+                "file": "src/stories/Page.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -720,16 +812,6 @@
                 "name": "LoggedIn",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/Page.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "LoggedOut",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/stories/Header.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -741,6 +823,16 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/Page.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "LoggedOut",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Header.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -819,21 +911,21 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/CustomTag.stories.ts",
+                "file": "src/stories/CustomSwitch.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<NzTagComponent>",
-                "defaultValue": "(args: NzTagComponent) => ({\n  props: args,\n})"
+                "type": "Story<CustomSwitchComponent>",
+                "defaultValue": "(args: CustomSwitchComponent) => ({\n  props: args,\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/Header.stories.ts",
+                "file": "src/stories/CustomTag.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<Header>",
-                "defaultValue": "(args: Header) => ({\n  props: args,\n})"
+                "type": "Story<CustomTagComponent>",
+                "defaultValue": "(args: CustomTagComponent) => ({\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -844,6 +936,16 @@
                 "deprecationMessage": "",
                 "type": "Story<Page>",
                 "defaultValue": "(args: Page) => ({\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Header.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<Header>",
+                "defaultValue": "(args: Header) => ({\n  props: args,\n})"
             }
         ],
         "functions": [],
@@ -913,6 +1015,28 @@
                     "type": "literal type"
                 }
             ],
+            "src/stories/CustomSwitch.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/CustomSwitch.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/CustomSwitch.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<CustomSwitchComponent>",
+                    "defaultValue": "(args: CustomSwitchComponent) => ({\n  props: args,\n})"
+                }
+            ],
             "src/stories/CustomTag.stories.ts": [
                 {
                     "name": "Default",
@@ -931,8 +1055,8 @@
                     "file": "src/stories/CustomTag.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "Story<NzTagComponent>",
-                    "defaultValue": "(args: NzTagComponent) => ({\n  props: args,\n})"
+                    "type": "Story<CustomTagComponent>",
+                    "defaultValue": "(args: CustomTagComponent) => ({\n  props: args,\n})"
                 }
             ],
             "src/environments/environment.prod.ts": [
@@ -1011,38 +1135,6 @@
                     "defaultValue": "(args: Button) => ({\n  props: args,\n})"
                 }
             ],
-            "src/stories/Header.stories.ts": [
-                {
-                    "name": "LoggedIn",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/Header.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "LoggedOut",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/Header.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/Header.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<Header>",
-                    "defaultValue": "(args: Header) => ({\n  props: args,\n})"
-                }
-            ],
             "src/stories/Page.stories.ts": [
                 {
                     "name": "LoggedIn",
@@ -1074,6 +1166,38 @@
                     "type": "Story<Page>",
                     "defaultValue": "(args: Page) => ({\n  props: args,\n})"
                 }
+            ],
+            "src/stories/Header.stories.ts": [
+                {
+                    "name": "LoggedIn",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Header.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "LoggedOut",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Header.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Header.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<Header>",
+                    "defaultValue": "(args: Header) => ({\n  props: args,\n})"
+                }
             ]
         },
         "groupedFunctions": {},
@@ -1095,7 +1219,7 @@
         ]
     },
     "coverage": {
-        "count": 3,
+        "count": 2,
         "status": "low",
         "files": [
             {
@@ -1112,6 +1236,15 @@
                 "type": "component",
                 "linktype": "component",
                 "name": "CustomButtonComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/custom-switch/custom-switch.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CustomSwitchComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/5",
                 "status": "low"
@@ -1227,6 +1360,26 @@
             },
             {
                 "filePath": "src/stories/CustomButton.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/CustomSwitch.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/CustomSwitch.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
