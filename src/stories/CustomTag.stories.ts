@@ -1,5 +1,5 @@
-import { Story, Meta } from '@storybook/angular';
-import { NzTagComponent } from 'ng-zorro-antd/tag';
+import { Story, Meta, moduleMetadata } from '@storybook/angular';
+import { NzTagComponent, NzTagModule } from 'ng-zorro-antd/tag';
 import { CustomTagComponent } from 'src/app/custom-tag/custom-tag.component';
 
 export default {
@@ -9,9 +9,14 @@ export default {
     color: { control: 'color' },
     text: { control: 'text' }
   },
+  decorators: [
+    moduleMetadata({
+      imports: [NzTagModule]
+    }
+  ]
 } as Meta;
 
-const Template: Story<NzTagComponent> = (args: NzTagComponent) => ({
+const Template: Story<CustomTagComponent> = (args: CustomTagComponent) => ({
   props: args,
 });
 
