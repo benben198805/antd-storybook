@@ -15,6 +15,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
 import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
 import { NzTagModule } from 'ng-zorro-antd/tag';
+import { CustomSwitchComponent } from './custom-switch/custom-switch.component';
+import { NzSwitchModule } from 'ng-zorro-antd/switch';
 
 registerLocaleData(en);
 
@@ -23,7 +25,8 @@ registerLocaleData(en);
   declarations: [
     AppComponent,
     CustomTagComponent,
-    CustomButtonComponent
+    CustomButtonComponent,
+    CustomSwitchComponent
   ],
   imports: [
     BrowserModule,
@@ -34,6 +37,7 @@ registerLocaleData(en);
     NzInputNumberModule,
     NzDatePickerModule,
     NzTagModule,
+    NzSwitchModule,
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]

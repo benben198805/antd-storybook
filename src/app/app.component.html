@@ -7,9 +7,12 @@
     <nz-input-number [(ngModel)]="demoValue" [nzMin]="1" [nzMax]="100" [nzStep]="1" [nzFormatter]="formatterPercent" [nzParser]="parserPercent"></nz-input-number>
 </div>
 
-
 <div class="component">
     <app-custom-tag [text]="'test custom tag'"></app-custom-tag>
+</div>
+
+<div class="component">
+    <app-custom-switch [openText]="'yes'" [closeText]="'no'"></app-custom-switch>
 </div>
 
 <div class="component">
